@@ -158,7 +158,7 @@ export default function Sidebar({
               No notes yet. Create one above.
             </p>
           ) : (
-            tree.map((node) => (
+            tree.map((node, i) => (
               <TreeNodeItem
                 key={node.id}
                 node={node}
@@ -168,6 +168,7 @@ export default function Sidebar({
                 onContextMenu={handleContextMenu}
                 expandedIds={expandedIds}
                 toggleExpand={toggleExpand}
+                isLast={i === tree.length - 1}
               />
             ))
           )}
